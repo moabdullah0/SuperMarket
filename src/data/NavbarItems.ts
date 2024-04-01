@@ -1,15 +1,15 @@
 export const NavbarItems=[
     {
         title:'Home',
-        url:''
+        url:'/'
     },
     {
         title:'About US',
-        url:''
+        url:'/aboute'
     },
     {
         title:'Contact',
-        url:''
+        url:'contact'
     },
     {
         title:'Question',

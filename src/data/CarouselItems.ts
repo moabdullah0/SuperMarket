@@ -1,4 +1,4 @@
-export const Carousel=[
+export const CarouselItems=[
     {
         img:'https://img.freepik.com/free-photo/person-shopping-with-face-mask_23-2149565242.jpg?size=626&ext=jpg&ga=GA1.1.1959026844.1711402571&semt=sph',
         itemId:1,

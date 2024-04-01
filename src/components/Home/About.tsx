@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="bg-gray-200 flex flex-col lg:flex-row items-center justify-center pt-[50%] lg:pt-[0%] font-serif">
+    <div className="bg-gray-200 flex flex-col lg:flex-row items-center justify-center  font-serif">
       <img
         src="https://0effortthemes.com/veggie/images/homepage/small-text-baner.jpg"
         className="mx-auto lg:w-[20%] sm:w-[80%] my-5"

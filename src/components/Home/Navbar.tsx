@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../assets/Syrian SuperMarket Logo.svg";
-import { NavbarItems } from "../data/NavbarItems";
+import logo from '../../assets/Syrian SuperMarket Logo.svg';
+import { NavbarItems } from "../../data/NavbarItems";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -12,15 +12,15 @@ const Navbar: React.FC = () => {
     <nav className="bg-transparent bg-green-100  ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          {/* Logo or brand */}
+
           <a href="#" className="flex-shrink-0 flex items-center">
             <img
-              className="block lg:hidden h-12 w-36"
+              className="block lg:hidden h-16 w-36"
               src={logo}
               alt="Workflow"
             />
             <img
-              className="hidden lg:block h-16 w-auto"
+              className="hidden lg:block h-16 w-36"
               src={logo}
               alt="Workflow"
             />
@@ -29,8 +29,9 @@ const Navbar: React.FC = () => {
           {/* Desktop menu */}
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
-              {NavbarItems.map((nav) => (
+              {NavbarItems.map((nav,index) => (
                 <a
+                key={index} 
                   href={nav.url}
                   className="text-gray-600 hover:bg-green-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -97,8 +98,9 @@ const Navbar: React.FC = () => {
           className={`${isOpen ? "block" : "hidden"} px-2 pt-2 pb-3 space-y-1`}
         >
           {/* Navigation links */}
-          {NavbarItems.map((nav) => (
+          {NavbarItems.map((nav,index) => (
             <a
+            key={index}
               href={nav.url}
               className="bg-green-700 text-white block px-3 py-2 rounded-md text-base font-medium"
               aria-current="page"

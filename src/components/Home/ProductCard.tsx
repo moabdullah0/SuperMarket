@@ -3,10 +3,10 @@ import React, { useState } from "react";
 interface CardItem {
   title: string;
   img: string;
-  price: string;
+
 }
 
-const ProductCard: React.FC<CardItem> = ({ title, img, price }) => {
+const ProductCard: React.FC<CardItem> = ({ title, img }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -24,11 +24,7 @@ const ProductCard: React.FC<CardItem> = ({ title, img, price }) => {
             {title}
           </h5>
         </a>
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            {price}
-          </h5>
-        </a>
+       
       </div>
 
       <div
