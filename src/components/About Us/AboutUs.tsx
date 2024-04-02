@@ -5,7 +5,7 @@ import AboutServices from './AboutServices'
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className=''>
       <Navbar/>
       <SectionAbout/>
       <AboutServices/>

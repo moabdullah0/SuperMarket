@@ -34,7 +34,7 @@ export default function Carousel(): JSX.Element {
                         : "bg-gradient-to-tl from-black"
                     } `}
                   >
-                    <h5 className="text-xl absolute top-[10%]">
+                    <h5 className="text-2xl underline absolute top-[10%]">
                       {mode == "Eng" ? carousel.title : carousel.titleArabic}
                     </h5>
                     <p className="absolute top-[15%] lg:w-[30%]">
@@ -43,11 +43,11 @@ export default function Carousel(): JSX.Element {
                         : carousel.descriprtionArabic}
                     </p>
                     <button
-                      className={`${
+                      className={` ${
                         mode == "Eng"
-                          ? "absolute top-[50%] lg:top-[35%] "
-                          : "absolute top-[47%] lg:top-[40%]"
-                      } bg-green-600 w-[50%] lg:w-[10%] h-[8%] rounded-lg `}
+                          ? "absolute top-[35%] lg:top-[35%] left-8 lg:left-36"
+                          : "absolute top-[47%] lg:top-[40%] right-12 lg:right-36"
+                      } bg-green-600 w-[50%] lg:w-[10%] h-[8%] rounded-xl `}
                     >
                       {mode == "Eng" ? "Lets Go" : "هيا بنا لنبدا رحلة التسوق"}
                     </button>

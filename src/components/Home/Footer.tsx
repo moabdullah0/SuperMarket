@@ -88,7 +88,7 @@ export default function Footer() {
               >{mode=='Eng'?'Healthy Carrot':'الجزر الصحي'}</a>
             </p>
           </div>
-          {/* <!-- Useful links section --> */}
+      
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase ">
@@ -108,7 +108,7 @@ export default function Footer() {
               >{mode=='Eng'?'Help':'التواصل مع الادارة'}</a>
             </p>
           </div>
-          {/* <!-- Contact section --> */}
+         
           <div>
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">

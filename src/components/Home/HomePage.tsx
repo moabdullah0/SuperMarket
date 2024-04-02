@@ -11,7 +11,7 @@ const HomePage = () => {
  
 
   return (
-    <div className='font-tajawal font-bold text-lg '>
+    <div className=''>
        <Navbar />
       <Carousel />
       <About />

@@ -12,20 +12,20 @@ const Navbar = () => {
     : "ease-in duration-300";
 
   return (
-    <nav className="bg-transparent bg-green-100 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
+    <nav className="bg-transparent bg-green-100 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200  ">
       <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         <a href="#" className="flex items-center">
           <img className="h-12 w-auto" src={logo} alt="Workflow" />
         </a>
 
-        <div className="hidden sm:flex items-center space-x-4">
+        <div className="hidden sm:flex items-center space-x-4 ">
           {NavbarItems.map((nav, index) => (
             <a
               key={index}
               href={nav.url}
-              className={`text-sm font-medium px-3 py-2 rounded-md hover:bg-green-700 hover:text-white ${
+              className={`text-sm font-medium px-3 py-2 rounded-md hover:bg-green-700 hover:text-white text-2xl${
                 mode === "Arabic" && "ml-4"
-              }`} // Adjusted spacing for RTL
+              }`}
             >
               {mode === "Eng" ? nav.title : nav.titleArab}
             </a>
