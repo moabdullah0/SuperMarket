@@ -46,7 +46,7 @@ export default function Carousel(): JSX.Element {
                       className={`${
                         mode == "Eng"
                           ? "absolute top-[50%] lg:top-[35%] "
-                          : "absolute top-[77%] lg:top-[60%]"
+                          : "absolute top-[47%] lg:top-[40%]"
                       } bg-green-600 w-[50%] lg:w-[10%] h-[8%] rounded-lg `}
                     >
                       {mode == "Eng" ? "Lets Go" : "هيا بنا لنبدا رحلة التسوق"}
