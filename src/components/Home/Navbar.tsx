@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "../../assets/Syrian SuperMarket Logo.svg";
 import { NavbarItems } from "../../data/NavbarItems";
 import { useGlobalContext } from "../../context/language";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { mode, toggleMode } = useGlobalContext();
@@ -12,7 +13,7 @@ const Navbar = () => {
     : "ease-in duration-300";
 
   return (
-    <nav className="bg-transparent bg-green-100 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200  ">
+    <nav className="bg-transparent bg-green-100 text-neutral-600   ">
       <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         <a href="#" className="flex items-center">
           <img className="h-12 w-auto" src={logo} alt="Workflow" />
@@ -20,15 +21,15 @@ const Navbar = () => {
 
         <div className="hidden sm:flex items-center space-x-4 ">
           {NavbarItems.map((nav, index) => (
-            <a
+            <Link
               key={index}
-              href={nav.url}
+              to={nav.url}
               className={`text-sm font-medium px-3 py-2 rounded-md hover:bg-green-700 hover:text-white text-2xl${
                 mode === "Arabic" && "ml-4"
               }`}
             >
               {mode === "Eng" ? nav.title : nav.titleArab}
-            </a>
+            </Link>
           ))}
 
           <div className="ml-4">
@@ -89,13 +90,13 @@ const Navbar = () => {
         } px-2 pt-2 pb-3 space-y-1`}
       >
         {NavbarItems.map((nav, index) => (
-          <a
+          <Link
             key={index}
-            href={nav.url}
+            to={nav.url}
             className="block px-3 py-2 rounded-md text-base font-medium bg-green-700 text-white"
           >
             {mode === "Eng" ? nav.title : nav.titleArab}
-          </a>
+          </Link>
         ))}
         <select
           onChange={toggleMode}

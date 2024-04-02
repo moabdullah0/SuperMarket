@@ -32,11 +32,7 @@ const Services = () => {
   />
 </div>
 
-      <div className="flex justify-center">
-        <button className="bg-green-600 px-10 py-3 rounded-lg text-white mt-9">
-          Read More
-        </button>
-      </div>
+    
     </div>
   );
 };

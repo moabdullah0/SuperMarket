@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ButtonShob, CardItemShop } from "../../data/Shopitems";
 import ProductCard from "./ProductCard";
 import { useGlobalContext } from "../../context/language";
@@ -6,7 +6,7 @@ import { useGlobalContext } from "../../context/language";
 
 const OurShop: React.FC = () => {
   const { mode } = useGlobalContext();
-
+  const [activeIndex, setActiveIndex] = useState<number>();
   return (
     <div className="bg-custom-color pb-3">
       <h1 className="text-4xl font-serif text-center text-gray-500 pt-10">
@@ -17,15 +17,20 @@ const OurShop: React.FC = () => {
 
       </p>
       <div className="flex justify-center flex-wrap gap-4 pt-10">
-        {ButtonShob.map((button, index) => (
-          <button
-            key={index}
-            className="text-gray-900 uppercase border border-green-300 hover:bg-green-600 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700 transition-colors duration-300"
-          >
-            {mode=='Eng'?button.title : button.titleArabic}
-          </button>
-        ))}
-      </div>
+      {ButtonShob.map((button, index) => (
+        <button
+          key={index}
+          className={`text-gray-900 uppercase border border-green-300 ${
+            activeIndex === index ? "bg-green-600 text-white" : "hover:bg-green-600" 
+          } focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5   ${
+            activeIndex === index ? "dark:bg-gray-700" : "dark:hover:bg-gray-700"
+          } dark:focus:ring-gray-700 transition-colors duration-300`}
+          onClick={() => setActiveIndex(index)}     
+        >
+          {mode == "Eng" ? button.title : button.titleArabic}
+        </button>
+      ))}
+    </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-5 pt-10">
         {CardItemShop.map((card, index) => (
           <ProductCard key={index} title={mode=='Eng'?card.title:card.titleArabic} img={card.img} />

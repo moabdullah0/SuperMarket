@@ -6,15 +6,15 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left lg:px-20 px-10 ">
+      className="bg-gray-900 text-center text-white   lg:text-left lg:px-48 px-10 ">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
-        <div className="mr-12 hidden lg:block px-20">
+        <div className=" hidden lg:block ">
           <span>{mode=='Eng'?'Get connected with us on social networks:':'تواصل معنا على صفحاتنا على مواقع التواصل الاجتماعي'}</span>
         </div>
      
-        <div className="flex justify-center lg:px-56">
-          <a className="mr-6 text-neutral-600 dark:text-neutral-200">
+        <div className="flex justify-center lg:px-64">
+          <a className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -24,7 +24,7 @@ export default function Footer() {
                 d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
             </svg>
           </a>
-          <a className="mr-6 text-neutral-600 dark:text-neutral-200">
+          <a className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -35,7 +35,7 @@ export default function Footer() {
             </svg>
           </a>
           
-          <a className="mr-6 text-neutral-600 dark:text-neutral-200">
+          <a className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -52,7 +52,7 @@ export default function Footer() {
 
      
       <div className="mx-6 py-10 text-center ">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
           <div className="">
             <h6
@@ -60,34 +60,13 @@ export default function Footer() {
               <img src={logo} className='w-12 '/>
            {mode=='Eng'?'Syrian Market':'سوبر ماركت سوريا'}
             </h6>
-            <p>
+            <p className='text-start'>
           {mode=='Eng'?'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making itlook like readable English. Many desktop publishing packages and webpage Many desktop publishing packages and web':'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي. وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر'}
               
             </p>
           </div>
          
-          <div className="">
-            <h6
-              className="mb-4 flex justify-center font-semibold uppercase ">
-             {mode=='Eng'?'Products':'منتجاتنا'}
-            </h6>
-            <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >{mode=='Eng'?'Healthy Carrot':'الجزر الصحي'}</a>
-            </p>
-            <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >{mode=='Eng'?'Awsome Apples':'اصناف التفاح'}</a>
-            </p>
-            <p className="mb-4">
-            <a className="text-neutral-600 dark:text-neutral-200"
-              >{mode=='Eng'?'Awsome Apples':'اصناف التفاح'}</a>
-            </p>
-            <p>
-            <a className="text-neutral-600 dark:text-neutral-200"
-              >{mode=='Eng'?'Healthy Carrot':'الجزر الصحي'}</a>
-            </p>
-          </div>
+       
       
           <div className="">
             <h6
@@ -95,16 +74,16 @@ export default function Footer() {
 {mode=='Eng'?'UseFul Links':' روابط التصفح'}            
             </h6>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white"
               >{mode=='Eng'?'Pricing':'الاسعار'}</a>
             </p>
             
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white"
               >{mode=='Eng'?'orders':'الطلبات'}</a>
             </p>
             <p>
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white"
               >{mode=='Eng'?'Help':'التواصل مع الادارة'}</a>
             </p>
           </div>

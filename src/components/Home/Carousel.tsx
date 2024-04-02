@@ -34,23 +34,27 @@ export default function Carousel(): JSX.Element {
                         : "bg-gradient-to-tl from-black"
                     } `}
                   >
-                    <h5 className="text-2xl underline absolute top-[10%]">
-                      {mode == "Eng" ? carousel.title : carousel.titleArabic}
-                    </h5>
-                    <p className="absolute top-[15%] lg:w-[30%]">
-                      {mode == "Eng"
-                        ? carousel.description
-                        : carousel.descriprtionArabic}
-                    </p>
+                    <div className="absolute top-[30%] md:top-[35%] lg:top-[30%] w-[100%] md:w-[70%] lg:w-[100%]">
+                      <h5 className="text-2xl">
+                        {mode == "Eng" ? carousel.title : carousel.titleArabic}
+                      </h5>
+                      <p className="w-[80%] lg:w-[30%]">
+                        {mode == "Eng"
+                          ? carousel.description
+                          : carousel.descriprtionArabic}
+                      </p>
+                    </div>
+
                     <button
                       className={` ${
                         mode == "Eng"
-                          ? "absolute top-[35%] lg:top-[35%] left-8 lg:left-36"
-                          : "absolute top-[47%] lg:top-[40%] right-12 lg:right-36"
-                      } bg-green-600 w-[50%] lg:w-[10%] h-[8%] rounded-xl `}
+                          ? "absolute top-[60%] lg:top-[52%] left-8  lg:left-36"
+                          : "absolute top-[78%] lg:top-[55%] md:top-[55%]  right-12 lg:right-36"
+                      } bg-green-600 w-[50%] lg:w-[15%] md:w-[30%] h-[8%] rounded-xl `}
                     >
                       {mode == "Eng" ? "Lets Go" : "هيا بنا لنبدا رحلة التسوق"}
                     </button>
+
                   </div>
                 </div>
               </TECarouselItem>
