@@ -15,6 +15,7 @@ export default {
       },
       fontFamily: {
         'dancing-script': ['"Dancing Script"', 'cursive'],
+        'tajawal': ['Tajawal', 'sans-serif'],
       },
     },
   },

@@ -1,20 +1,22 @@
+import { useGlobalContext } from "../../context/language";
+
 const Featured = () => {
+  const { mode } = useGlobalContext();
+
     return (
       <div className="bg-gray-200 text-center">
         <div>
-          <h1 className="text-4xl font-serif text-center pt-20 text-gray-500">New Week Featured</h1>
+          <h1 className="text-4xl font-serif text-center pt-20 text-gray-500">{mode=='Eng'?'New Week Featured':'اصناف جديدة اسبوعيا'}</h1>
           <p className="text-center mx-auto max-w-2xl pt-2 text-gray-500">
-            long established fact that a reader will be distracted by the readable content of a page when
-            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+          {mode=='Eng'?'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making itlook like readable English. Many desktop publishing packages and webpage Many desktop publishing packages and web':'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … وعند موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم الاساسي. وخلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد. من كتاب “حول أقاصي الخير والشر'}
+
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-start mt-10">
           <div className="relative m-2 group">
             <img src="https://0effortthemes.com/veggie/images/homepage/veg-big.jpg" alt="" className="w-full h-full rounded-xl transition duration-300 ease-in-out transform group-hover:scale-110"/>
             <div className="absolute top-[30%] left-0 text-white font-bold p-2 text-5xl">Fresh vegetables 30% off 
-              <button className="bg-green-600 w-[40%] lg:w-[20%] px-4 py-5 rounded-lg text-lg">
-                Read More
-              </button>
+             
             </div>
           </div>
           <div className="m-2">
@@ -24,9 +26,7 @@ const Featured = () => {
     <p className=" left-0 text-white font-bold p-2 text-5xl">Fresh vegetables 30% off 
       
     </p>
-    <button className="bg-green-600 w-56 lg:w-[20%] px-2 py-2 rounded-lg text-lg text-white font-bold">
-        Read More
-      </button>
+   
     </div>
   </div>
   <div className="relative mt-2 group">
@@ -35,9 +35,7 @@ const Featured = () => {
     <p className=" left-0 text-white font-bold p-2 text-5xl">Fresh vegetables 30% off 
       
     </p>
-    <button className="bg-green-600 w-56 lg:w-[20%] px-2 py-2 rounded-lg text-lg text-white font-bold">
-        Read More
-      </button>
+    
     </div>
   </div>
 </div>

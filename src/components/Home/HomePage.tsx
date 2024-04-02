@@ -8,8 +8,10 @@ import Footer from './Footer'
 import Carousel from './Carousel'
 
 const HomePage = () => {
+ 
+
   return (
-    <div>
+    <div className='font-tajawal font-bold text-lg '>
        <Navbar />
       <Carousel />
       <About />
