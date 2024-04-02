@@ -5,6 +5,7 @@ import HomePage from "../components/Home/HomePage";
 
 import AboutUs from "../components/About Us/AboutUs";
 import Contact from "../components/Contact/Contact";
+import Faq from "../components/Faq/Faq";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact/>,
+  },
+  {
+    path: "/faq",
+    element: <Faq/>,
   },
 ]);
 

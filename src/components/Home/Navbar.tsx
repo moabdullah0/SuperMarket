@@ -1,142 +1,88 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import logo from "../../assets/Syrian SuperMarket Logo.svg";
 import { NavbarItems } from "../../data/NavbarItems";
 import { useGlobalContext } from "../../context/language";
-const Navbar: React.FC = () => {
+
+const Navbar = () => {
   const { mode, toggleMode } = useGlobalContext();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const menuAnimationClasses = isOpen
-    ? "ease-out duration-300"
-    : "ease-in duration-300";
+  const menuAnimationClasses = isOpen ? "ease-out duration-300" : "ease-in duration-300";
 
   return (
-    <nav
-      className="bg-transparent bg-green-100  "
-      dir={mode == "Eng" ? "ltr" : "rtl"}
-    >
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <a href="#" className="flex-shrink-0 flex items-center">
-            <img
-              className="block lg:hidden h-16 w-36"
-              src={logo}
-              alt="Workflow"
-            />
-            <img
-              className="hidden lg:block h-16 w-36"
-              src={logo}
-              alt="Workflow"
-            />
-          </a>
+    <nav className="bg-transparent bg-green-100 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
+      <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        {/* Logo always visible, adjusted size for mobile */}
+        <a href="#" className="flex items-center">
+          <img
+            className="h-12 w-auto" // Adjusted for responsive sizing
+            src={logo}
+            alt="Workflow"
+          />
+        </a>
 
-         
-          <div className="hidden sm:block sm:ml-6">
-            <div className="flex space-x-4">
-              {NavbarItems.map((nav, index) => (
-                <a
-                  key={index}
-                  href={nav.url}
-                  className="text-gray-600 hover:bg-green-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-               {mode == "Eng" ? nav.title : nav.titleArab}
-                </a>
-              ))}
-              <label className="inline-flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={mode === "Arabic"}
-                  onChange={toggleMode}
-                  className="sr-only peer"
-                />
-                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
-
-                <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  {mode === "Eng" ? "English" : "عربي"}
-                </span>
-              </label>
-            </div>
-          </div>
-
-          <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-
-              <svg
-                className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <svg
-                className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`transform ${menuAnimationClasses} sm:hidden ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-200 ease-in-out`}
-        id="mobile-menu"
-      >
-        <div
-          className={`${isOpen ? "block" : "hidden"} px-2 pt-2 pb-3 space-y-1`}
-        >
-          {/* Navigation links */}
+        {/* Desktop Menu */}
+        <div className="hidden sm:flex items-center space-x-4">
           {NavbarItems.map((nav, index) => (
             <a
               key={index}
               href={nav.url}
-              className="bg-green-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-              aria-current="page"
+              className={`text-sm font-medium px-3 py-2 rounded-md hover:bg-green-700 hover:text-white ${mode === "Arabic" && "ml-4"}`} // Adjusted spacing for RTL
             >
-              {mode == "Eng" ? nav.title : nav.titleArab}{" "}
+              {mode === "Eng" ? nav.title : nav.titleArab}
             </a>
           ))}
-          <label className="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={mode === "Arabic"}
-              onChange={toggleMode}
-              className="sr-only peer"
-            />
-            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
-
-            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-              {mode == "Eng" ? "English" : "عربي"}
-            </span>
-          </label>
+          {/* Toggle Button */}
+          <div className="ml-4">
+          <select
+            onChange={toggleMode}
+            value={mode}
+            className="bg-green-50 border border-gray-300 text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          >
+            <option value="Eng">English</option>
+            <option value="Arabic">عربي</option>
+          </select>
+          </div>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="sm:hidden p-2 text-gray-400 hover:text-white hover:bg-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          aria-expanded={isOpen}
+        >
+          <span className="sr-only">Open main menu</span>
+          {isOpen ? (
+            <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`sm:hidden ${menuAnimationClasses} ${isOpen ? "block" : "hidden"} px-2 pt-2 pb-3 space-y-1`}>
+        {NavbarItems.map((nav, index) => (
+          <a
+            key={index}
+            href={nav.url}
+            className="block px-3 py-2 rounded-md text-base font-medium bg-green-700 text-white"
+          >
+            {mode === "Eng" ? nav.title : nav.titleArab}
+          </a>
+        ))}
+        <select
+            onChange={toggleMode}
+            value={mode}
+            className="block px-3 py-2  text-base font-medium bg-green-700 text-white border border-gray-300   rounded-lg focus:ring-green-500 focus:border-green-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          >
+            <option value="Eng">English</option>
+            <option value="Arabic">عربي</option>
+          </select>
       </div>
     </nav>
   );

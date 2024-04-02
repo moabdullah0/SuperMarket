@@ -15,9 +15,9 @@ export const NavbarItems=[
         url:'contact'
     },
     {
-        title:'Question',
+        title:'Faq',
         titleArab:'الاسئلة',
 
-        url:''
+        url:'faq'
     },
 ]

@@ -8,7 +8,7 @@ const OurShop: React.FC = () => {
   const { mode } = useGlobalContext();
 
   return (
-    <div className="bg-custom-color">
+    <div className="bg-custom-color pb-3">
       <h1 className="text-4xl font-serif text-center text-gray-500 pt-10">
         {mode=='Eng'?'Our Shop':'التسوق'}
       </h1>
